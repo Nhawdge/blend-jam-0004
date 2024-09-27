@@ -17,19 +17,26 @@ const GameAssets = {
             path: "bg-lounge.png"
         }
     ],
+    magnet: {
+        handle: 'magnet' as Handle,
+        path: 'magnet.png'
+    },
 
     load: (update: Update) => {
         const assets = update.assets();
         
         for (const bg of GameAssets.backgrounds) {
-            assets.add(TextureAsset.loadSingleSprite(bg.handle, `assets/${bg.path}`))
+            assets.add(TextureAsset.loadSingleSprite(bg.handle, `assets/${bg.path}`));
         }
+
+        assets.add(TextureAsset.loadSingleSprite(GameAssets.magnet.handle, `assets/${GameAssets.magnet.path}`));
     },
 
     isLoaded: (update: Update) => {
         const assets = update.assets();
 
-        return assets.loaded(GameAssets.backgrounds.map(x => x.handle));
+        return assets.loaded(GameAssets.backgrounds.map(x => x.handle))
+            && assets.loaded([ GameAssets.magnet.handle ]);
     }
 };
 
