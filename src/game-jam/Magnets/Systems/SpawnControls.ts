@@ -22,6 +22,10 @@ export default function SpawnControls(update: Update) {
             c.keyboard('d');
             c.positive(1, 0.25);
         });
+        b.for(PlayerActions.pull, c => {
+            c.keyboard('f');
+            c.button(0);
+        });
     });
 
     update.spawn(
@@ -46,6 +50,10 @@ export default function SpawnControls(update: Update) {
         b.for(PlayerActions.right, c => {
             c.keyboard('ArrowRight');
             c.positive(1, 0.25);
+        });
+        b.for(PlayerActions.pull, c => {
+            c.keyboard('/');
+            c.button(0);
         });
     });
 

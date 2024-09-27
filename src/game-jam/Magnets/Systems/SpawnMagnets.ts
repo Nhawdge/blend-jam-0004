@@ -34,7 +34,7 @@ export default function SpawnMagnets(update: Update) {
 
     // And the associated beam
     update.spawn(
-        new Gradient(Color.White(0.3), Color.White(0.3), Color.White(0.3), Color.White(0.3), new Vec2(100, 370)),
+        new Gradient(Color.White(0.3), Color.White(0.3), Color.White(0.3), Color.White(0.3), new Vec2(Config.BeamWidth, 370)),
         new Position(new Vec2(0, -290)),
         new Parent(parent),
         new Visible(false),
@@ -57,7 +57,7 @@ export default function SpawnMagnets(update: Update) {
 
     // Beam
     update.spawn(
-        new Gradient(Color.White(0.3), Color.White(0.3), Color.White(0.3), Color.White(0.3), new Vec2(650, 100)),
+        new Gradient(Color.White(0.3), Color.White(0.3), Color.White(0.3), Color.White(0.3), new Vec2(650, Config.BeamWidth)),
         new Position(new Vec2(590, 0)),
         new Parent(parent),
         new Visible(false),
@@ -82,11 +82,11 @@ export default function SpawnMagnets(update: Update) {
 
     // Beam
     update.spawn(
-        new Gradient(Color.White(0.3), Color.White(0.3), Color.White(0.3), Color.White(0.3), new Vec2(100, 370)),
+        new Gradient(Color.White(0.3), Color.White(0.3), Color.White(0.3), Color.White(0.3), new Vec2(Config.BeamWidth, 370)),
         new Position(new Vec2(0, 290)),
         new Parent(parent),
         new Visible(false),
-        new PlayerSpecific(1),
+        new PlayerSpecific(2),
         new Axis(Axis.HORIZONTAL),
         new RenderOrder(OverlayLayer),
         new Beam(),
@@ -105,11 +105,11 @@ export default function SpawnMagnets(update: Update) {
 
     // Beam
     update.spawn(
-        new Gradient(Color.White(0.3), Color.White(0.3), Color.White(0.3), Color.White(0.3), new Vec2(650, 100)),
+        new Gradient(Color.White(0.3), Color.White(0.3), Color.White(0.3), Color.White(0.3), new Vec2(650, Config.BeamWidth)),
         new Position(new Vec2(-590, 0)),
         new Parent(parent),
         new Visible(false),
-        new PlayerSpecific(1),
+        new PlayerSpecific(2),
         new Axis(Axis.HORIZONTAL),
         new RenderOrder(OverlayLayer),
         new Beam(),

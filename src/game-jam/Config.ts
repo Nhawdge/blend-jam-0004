@@ -7,5 +7,6 @@ export default {
     MagnetDrag: 0.9,
     MagnetExtent: new Vec2(580, 290),
     FloorY: -150,
-    PlayerStartX: 350
+    PlayerStartX: 350,
+    BeamWidth: 50
 }

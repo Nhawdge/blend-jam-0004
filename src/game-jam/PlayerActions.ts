@@ -2,5 +2,6 @@ export default {
     up: 'up',
     down: 'down',
     left: 'left',
-    right: 'right'
+    right: 'right',
+    pull: 'pull'
 }
