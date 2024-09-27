@@ -2,3 +2,5 @@
 .godot/
 /android/
 /raw-assets/*
+/dist/
+node_modules/
