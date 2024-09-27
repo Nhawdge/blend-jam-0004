@@ -6,12 +6,15 @@ import Vec2 from "../../../2B2D/Math/Vec2";
 import { GradientRenderer } from "../../../2B2D/Rendering/Gradient/GradientRenderer";
 import SpriteRenderer from "../../../2B2D/Rendering/Sprite/SpriteRenderer";
 import Update from "../../../2B2D/Update";
+import OverlayLayer from "../../OverlayLayer";
 import CameraParent from "../Components/CameraParent";
 import CameraSpawnedSignal from "../Signals/CameraSpawnedSignal";
 
 export default function SetupRendering(update: Update) {
     update.renderers.add(SpriteRenderer.create);
     update.renderers.add(GradientRenderer.create);
+
+    update.engine.rendering.renderOrder = [ OverlayLayer ];
   
     const parent = update.spawn(
       Position.from(0, 0),

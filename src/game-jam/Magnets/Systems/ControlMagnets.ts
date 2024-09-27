@@ -8,10 +8,11 @@ import Config from "../../Config";
 import PlayerSpecific from "../../Player/Components/PlayerSpecific";
 import PlayerActions from "../../PlayerActions";
 import Axis from "../Components/Axis";
+import Magnet from "../Components/Magnet";
 
 export default function ControlMagnets(update: Update) {
     // Probably the magnets
-    const magnets = update.ecs.query(Axis, PlayerSpecific, Position, Velocity);
+    const magnets = update.ecs.query(Axis, PlayerSpecific, Position, Velocity, Magnet);
 
     const controllers = update.ecs.query(PlayerSpecific, MappedInput);
 
