@@ -19,7 +19,8 @@ const GameAssets = {
     ],
     magnet: {
         handle: 'magnet' as Handle,
-        path: 'magnet.png'
+        path: 'magnet.png',
+        json: 'magnet.json'
     },
 
     load: (update: Update) => {
@@ -29,7 +30,11 @@ const GameAssets = {
             assets.add(TextureAsset.loadSingleSprite(bg.handle, `assets/${bg.path}`));
         }
 
-        assets.add(TextureAsset.loadSingleSprite(GameAssets.magnet.handle, `assets/${GameAssets.magnet.path}`));
+        assets.add(TextureAsset.loadSpriteWithAtlas(
+            GameAssets.magnet.handle, 
+            `assets/${GameAssets.magnet.path}`,
+            `assets/${GameAssets.magnet.json}`
+        ));
     },
 
     isLoaded: (update: Update) => {

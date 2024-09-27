@@ -1,6 +1,7 @@
 import Builder from "../2B2D/Builder";
 import Update from "../2B2D/Update";
 import ArenaPlugin from "./Arena/ArenaPlugin";
+import Config from "./Config";
 import FightPlugin from "./Fight/FightPlugin";
 import FightState from "./Fight/States/FightState";
 import GlobalStateResource from "./GlobalStateResource";
@@ -17,7 +18,10 @@ export default function GamePlugin(builder: Builder) {
     builder.plugin(PlayerPlugin);
     builder.plugin(MagnetsPlugin);
 
-    builder.resource(new GlobalStateResource());
+    const globalState = new GlobalStateResource();
+    globalState.arena = Math.floor(Math.random() * Config.TotalArenas);
+    
+    builder.resource(globalState);
 
     builder.signals.handle(LoadedSignal, (update: Update) => {
         update.schedule.enter(FightState);
