@@ -1,6 +1,7 @@
 import Depth from "../../../2B2D/Components/Depth";
 import Position from "../../../2B2D/Components/Position";
 import Sprite from "../../../2B2D/Components/Sprite";
+import Velocity from "../../../2B2D/Components/Velocity";
 import Color from "../../../2B2D/Math/Color";
 import Vec2 from "../../../2B2D/Math/Vec2";
 import Update from "../../../2B2D/Update";
@@ -16,7 +17,8 @@ export default function SpawnMagnets(update: Update) {
         new Position(new Vec2(0, Dimensions.TopMagnetY)),
         new Depth(0.1),
         new PlayerSpecific(1),
-        new Axis(Axis.HORIZONTAL)
+        new Axis(Axis.HORIZONTAL),
+        new Velocity(Vec2.ZERO),
     );
 
     // Player 1, left
@@ -25,7 +27,8 @@ export default function SpawnMagnets(update: Update) {
         new Position(new Vec2(Dimensions.LeftMagnetX, 0)),
         new Depth(0.1),
         new PlayerSpecific(1),
-        new Axis(Axis.VERTICAL)
+        new Axis(Axis.VERTICAL),
+        new Velocity(Vec2.ZERO),
     );
 
 
@@ -35,7 +38,8 @@ export default function SpawnMagnets(update: Update) {
         new Position(new Vec2(0, -Dimensions.TopMagnetY)),
         new Depth(0.1),
         new PlayerSpecific(2),
-        new Axis(Axis.HORIZONTAL)
+        new Axis(Axis.HORIZONTAL),
+        new Velocity(Vec2.ZERO),
     );
 
     // Player 2, right
@@ -43,7 +47,8 @@ export default function SpawnMagnets(update: Update) {
         new Sprite(GameAssets.magnet.handle, undefined, Vec2.ONE, new Color(0, 0, 1, 1), -Math.PI / 2),
         new Position(new Vec2(-Dimensions.LeftMagnetX, 0)),
         new Depth(0.1),
-        new PlayerSpecific(1),
-        new Axis(Axis.VERTICAL)
+        new PlayerSpecific(2),
+        new Axis(Axis.VERTICAL),
+        new Velocity(Vec2.ZERO),
     );
 }
