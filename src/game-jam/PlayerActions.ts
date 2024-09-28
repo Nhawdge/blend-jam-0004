@@ -3,5 +3,6 @@ export default {
     down: 'down',
     left: 'left',
     right: 'right',
+    flip: 'flip',
     pull: 'pull'
 }

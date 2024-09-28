@@ -26,10 +26,14 @@ export default function SpawnControls(update: Update) {
             c.keyboard('f');
             c.button(0);
         });
+        b.for(PlayerActions.flip, c => {
+            c.keyboard('q');
+            c.button(1);
+        });
     });
 
     update.spawn(
-        new PlayerSpecific(1),
+        new PlayerSpecific(0),
         playerOne
     );
 
@@ -55,10 +59,14 @@ export default function SpawnControls(update: Update) {
             c.keyboard('/');
             c.button(0);
         });
+        b.for(PlayerActions.flip, c => {
+            c.keyboard('\'');
+            c.button(1);
+        });
     });
 
     update.spawn(
-        new PlayerSpecific(2),
+        new PlayerSpecific(1),
         playerTwo
     );
 }

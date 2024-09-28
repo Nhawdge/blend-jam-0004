@@ -67,28 +67,4 @@ export default function ControlMagnets(update: Update) {
         // Update velocity
         // velocity.velocity = pos.sub(position.position);
     }
-
-    /*
-    for (const controller of controllers) {
-        const [ playerController, playerInput ] = controller.components;
-
-        const horizontalMagnet = magnets.find(x => x.components[0].axis == Axis.HORIZONTAL && x.components[1].player == playerController.player);
-        if (horizontalMagnet) {
-            const [ _axis, _player, position, velocity ] = horizontalMagnet.components;
-
-            if (playerInput.isPressed(update, PlayerActions.left)) {
-                velocity.velocity = velocity.velocity.add(new Vec2(-Config.MagnetHorizontalAccel * update.delta, 0));
-            }
-            if (playerInput.isPressed(update, PlayerActions.right)) {
-                velocity.velocity = velocity.velocity.add(new Vec2(Config.MagnetHorizontalAccel * update.delta, 0));
-            }
-
-            velocity.velocity = velocity.velocity.scalarMultiply(Config.MagnetDrag);
-            position.position = position.position.add(velocity.velocity.scalarMultiply(update.delta));
-            
-            position.position = position.position.max(Config.MagnetExtent.scalarMultiply(-1));
-            position.position = position.position.min(Config.MagnetExtent);
-        }
-    }
-    */
 }

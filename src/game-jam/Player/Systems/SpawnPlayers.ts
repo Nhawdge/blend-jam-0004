@@ -8,6 +8,7 @@ import Vec2 from "../../../2B2D/Math/Vec2";
 import Update from "../../../2B2D/Update";
 import Config from "../../Config";
 import GameAssets from "../../GameAssets";
+import Player from "../Components/Player";
 import PlayerSpecific from "../Components/PlayerSpecific";
 
 export default function SpawnPlayers(update: Update) {
@@ -16,9 +17,10 @@ export default function SpawnPlayers(update: Update) {
         new Sprite(GameAssets.player.handle, '0', Vec2.ONE, new Color(1, 0.25, 0.25, 1), 0),
         new Position(new Vec2(-Config.PlayerStartX, Config.FloorY)),
         new Velocity(Vec2.ZERO),
-        new PlayerSpecific(1),
+        new PlayerSpecific(0),
         new Animated('idle'),
         new Depth(0.1),
+        new Player(),
     );
 
     // Player 2
@@ -26,8 +28,9 @@ export default function SpawnPlayers(update: Update) {
         new Sprite(GameAssets.player.handle, '0', new Vec2(-1, 1), Color.White(1), 0),
         new Position(new Vec2(Config.PlayerStartX, Config.FloorY)),
         new Velocity(Vec2.ZERO),
-        new PlayerSpecific(2),
+        new PlayerSpecific(1),
         new Animated('idle'),
         new Depth(0.1),
+        new Player(),
     );
 }

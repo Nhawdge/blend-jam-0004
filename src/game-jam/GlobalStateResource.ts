@@ -5,4 +5,8 @@ export default class GlobalStateResource implements Resource {
     readonly name: string = GlobalStateResource.NAME;
 
     public arena: number = 0;
+    public polarities: number[] = [
+        -1,
+        1
+    ];
 }
