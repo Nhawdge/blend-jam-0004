@@ -4,5 +4,7 @@ export default class Player implements Component {
     static readonly NAME: string = 'Player';
     readonly name: string = Player.NAME;
 
-    constructor() { }
+    constructor(
+        public isGrounded = true
+    ) { }
 }

@@ -46,9 +46,18 @@ export default function MovePlayers(update: Update) {
 
 
     for (const entity of players) {
-        const [ _player, _specify, velocity, pos ] = entity.components;
+        const [ player, _specify, velocity, pos ] = entity.components;
 
+        velocity.velocity = velocity.velocity.add(Config.PlayerGravity.scalarMultiply(update.delta));
         velocity.velocity = velocity.velocity.scalarMultiply(Config.PlayerDrag);
         pos.position = pos.position.add(velocity.velocity.scalarMultiply(update.delta));
+
+        player.isGrounded = pos.position.y < Config.PlayerGround;
+        if (player.isGrounded) {
+            pos.position = new Vec2(pos.position.x, Config.PlayerGround);
+        }
+
+        pos.position = pos.position.max(Config.PlayerExtent.scalarMultiply(-1));
+        pos.position = pos.position.min(Config.PlayerExtent);
     }
 }
