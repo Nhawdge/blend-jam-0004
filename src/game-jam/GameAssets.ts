@@ -22,6 +22,11 @@ const GameAssets = {
         path: 'magnet.png',
         json: 'magnet.json'
     },
+    arrows: {
+        handle: 'arrows' as Handle,
+        path: 'arrows.png',
+        json: 'arrows.json'
+    },
     player: {
         handle: 'player' as Handle,
         path: 'dummy13.png',
@@ -46,6 +51,12 @@ const GameAssets = {
             `assets/${GameAssets.player.path}`,
             `assets/${GameAssets.player.json}`
         ));
+
+        assets.add(TextureAsset.loadSpriteWithAtlas(
+            GameAssets.arrows.handle, 
+            `assets/${GameAssets.arrows.path}`,
+            `assets/${GameAssets.arrows.json}`
+        ));
     },
 
     isLoaded: (update: Update) => {
@@ -54,7 +65,8 @@ const GameAssets = {
         return assets.loaded(GameAssets.backgrounds.map(x => x.handle))
             && assets.loaded([ 
                 GameAssets.magnet.handle,
-                GameAssets.player.handle
+                GameAssets.player.handle,
+                GameAssets.arrows.handle
             ]);
     }
 };

@@ -1,5 +1,5 @@
+import Animated from "../../../2B2D/Components/Animated";
 import Depth from "../../../2B2D/Components/Depth";
-import Gradient from "../../../2B2D/Components/Gradient";
 import Parent from "../../../2B2D/Components/Parent";
 import Position from "../../../2B2D/Components/Position";
 import RenderOrder from "../../../2B2D/Components/RenderOrder";
@@ -34,7 +34,9 @@ export default function SpawnMagnets(update: Update) {
 
     // And the associated beam
     update.spawn(
-        new Gradient(Color.White(0.3), Color.White(0.3), Color.White(0.3), Color.White(0.3), new Vec2(Config.BeamWidth, 370)),
+        // new Gradient(Color.White(0.3), Color.White(0.3), Color.White(0.3), Color.White(0.3), new Vec2(Config.BeamWidth, 370)),
+        new Sprite(GameAssets.arrows.handle, '0', new Vec2(-2, 2), Color.White(0.3), -Math.PI / 2).withRepeat(new Vec2(12, 1)),
+        new Animated('Red'),
         new Position(new Vec2(0, -290)),
         new Parent(parent),
         new Visible(false),
@@ -57,10 +59,11 @@ export default function SpawnMagnets(update: Update) {
 
     // Beam
     update.spawn(
-        new Gradient(Color.White(0.3), Color.White(0.3), Color.White(0.3), Color.White(0.3), new Vec2(650, Config.BeamWidth)),
+        new Sprite(GameAssets.arrows.handle, '0', new Vec2(-2, 2), Color.White(0.3)).withRepeat(new Vec2(12, 1)),
+        new Animated('Red'),
         new Position(new Vec2(590, 0)),
         new Parent(parent),
-        new Visible(false),
+        new Visible(true),
         new PlayerSpecific(0),
         new Axis(Axis.HORIZONTAL),
         new RenderOrder(OverlayLayer),
@@ -82,7 +85,8 @@ export default function SpawnMagnets(update: Update) {
 
     // Beam
     update.spawn(
-        new Gradient(Color.White(0.3), Color.White(0.3), Color.White(0.3), Color.White(0.3), new Vec2(Config.BeamWidth, 370)),
+        new Sprite(GameAssets.arrows.handle, '0', new Vec2(2, 2), Color.White(0.3), -Math.PI / 2).withRepeat(new Vec2(12, 1)),
+        new Animated('Blue'),
         new Position(new Vec2(0, 290)),
         new Parent(parent),
         new Visible(false),
@@ -105,7 +109,8 @@ export default function SpawnMagnets(update: Update) {
 
     // Beam
     update.spawn(
-        new Gradient(Color.White(0.3), Color.White(0.3), Color.White(0.3), Color.White(0.3), new Vec2(650, Config.BeamWidth)),
+        new Sprite(GameAssets.arrows.handle, '0', new Vec2(2, 2), Color.White(0.3)).withRepeat(new Vec2(12, 1)),
+        new Animated('Blue'),
         new Position(new Vec2(-590, 0)),
         new Parent(parent),
         new Visible(false),
